@@ -1,2 +1,5 @@
 export {default as Sidebar} from './Sidebar/Sidebar.jsx'
 export {default as CustomHeader} from './CustomHeader/CustomHeader.jsx'
+export {default as MainContent} from './MainContent/MainContent.jsx'
+export {default as SideContent} from './SideContent/SideContent.jsx'
+export {default as Banner} from './Banner/Banner.jsx'

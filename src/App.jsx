@@ -1,10 +1,10 @@
-import { Button, Layout } from 'antd';
+import { Button, Flex, Layout } from 'antd';
 import {MenuUnfoldOutlined, MenuFoldOutlined} from '@ant-design/icons'
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 import 'antd/dist/reset.css';
 import { useState } from 'react';
 import './App.css'
-import { Sidebar, CustomHeader } from './components';
+import { Sidebar, CustomHeader, MainContent, SideContent } from './components';
 
 const { Header, Sider, Content } = Layout;
 
@@ -31,7 +31,12 @@ const App = () => {
         <Header className='header'>
           <CustomHeader />
         </Header>
-        <Content className='content'>qqqqqqq</Content>
+        <Content className='content'>
+          <Flex gap={"large"}>
+            <MainContent />
+            <SideContent />
+          </Flex>
+        </Content>
       </Layout>
     </Layout>
   );
