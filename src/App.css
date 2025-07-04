@@ -47,3 +47,28 @@
 .menu-bar .ant-menu-item:hover {
   background-color: #dcf0de !important; 
 }
+
+
+.header-icon {
+  font-size: 15px;
+  background-color: #dcf0de;
+  border-radius: 10px;
+  padding: 0.75rem;
+}
+
+
+.header-avatar {
+  background-color: #4f6f52;
+  color: white;
+}
+
+.header-search .ant-input-group-addon button {
+  background-color: #4f6f52 !important;
+  color: white !important;
+}
+
+
+.custom-search .ant-input-group-addon button:hover {
+  background-color: #dcf0de !important;
+  color: black !important;
+}

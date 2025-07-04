@@ -4,7 +4,7 @@ import { IoIosArrowDroprightCircle } from "react-icons/io";
 import 'antd/dist/reset.css';
 import { useState } from 'react';
 import './App.css'
-import Sidebar from './components/Sidebar/Sidebar';
+import { Sidebar, CustomHeader } from './components';
 
 const { Header, Sider, Content } = Layout;
 
@@ -29,7 +29,7 @@ const App = () => {
       </Sider>
       <Layout>
         <Header className='header'>
-          <div>xxxxxx</div>
+          <CustomHeader />
         </Header>
         <Content className='content'>qqqqqqq</Content>
       </Layout>
