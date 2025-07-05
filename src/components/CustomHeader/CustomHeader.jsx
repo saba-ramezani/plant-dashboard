@@ -1,29 +1,37 @@
 import { Avatar, Flex, Input, Typography, Grid } from 'antd';
-import { MessageOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
+import { MessageOutlined, NotificationOutlined, UserOutlined, MenuOutlined } from '@ant-design/icons';
 
 const { useBreakpoint } = Grid;
 const { Search } = Input;
 
-const CustomHeader = () => {
+const CustomHeader = ({ collapsed, setCollapsed, isMobileOrMd }) => {
   const screens = useBreakpoint();
-  const isMobile = !screens.md; // screens.md = true when width >= 768px
-  const isBetweenMdAndLg = screens.md && !screens.lg; //between 768 & 992
+  const isMobile = !screens.lg;
+  const isBetweenMdAndLg = screens.md && !screens.lg;
 
   return (
     <Flex
-      vertical={isMobile ||isBetweenMdAndLg}
-      align={'center'}
+      vertical={isMobile || isBetweenMdAndLg}
+      align="center"
       justify="space-between"
       gap={isMobile || isBetweenMdAndLg ? '1rem' : 0}
       style={{ width: '100%', padding: '12px' }}
     >
-      <Typography.Title
-        level={isMobile ? 4 : 3}
-        type="secondary"
-        style={{ margin: 0 }}
-      >
-        Welcome back, Saba
-      </Typography.Title>
+      <Flex align="center" gap="1rem" style={{ width: '100%' }}>
+        {isMobileOrMd && (
+          <MenuOutlined
+            onClick={() => setCollapsed(!collapsed)}
+            style={{ fontSize: 20, color: 'white', cursor: 'pointer', backgroundColor: '#4f6f52', padding: 10, borderRadius: '100%' }}
+          />
+        )}
+        <Typography.Title
+          level={isMobile ? 4 : 3}
+          type="secondary"
+          style={{ margin: 0 }}
+        >
+          Welcome back, Saba
+        </Typography.Title>
+      </Flex>
 
       <Flex
         align="center"
