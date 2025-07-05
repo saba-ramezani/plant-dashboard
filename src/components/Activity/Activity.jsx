@@ -1,12 +1,12 @@
 import { Avatar, Button, Flex, List, Typography } from "antd"
 import { activityData } from "../../data/activityData"
 
-const Activity = ({ isMobile }) => {
+const Activity = ({ isMobileOrMd }) => {
   return (
     <Flex vertical gap="small">
       <Flex align="center" justify="space-between" wrap>
         <Typography.Title
-          level={isMobile ? 4 : 3}
+          level={isMobileOrMd ? 4 : 3}
           strong
           className="primary--color"
           style={{ marginBottom: 0 }}

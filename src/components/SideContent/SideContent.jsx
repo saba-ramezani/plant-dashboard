@@ -6,12 +6,12 @@ const { useBreakpoint } = Grid;
 
 const SideContent = () => {
   const screens = useBreakpoint();
-  const isMobile = !screens.lg;
+  const isMobileOrMd = !screens.lg;
 
   return (
-    <Flex vertical gap="2.3rem" style={{ width: isMobile ? '100%' : 350 }}>
-      <ContentSidebar isMobile={isMobile} />
-      <Activity isMobile={isMobile} />
+    <Flex vertical gap="2.3rem" style={{ width: isMobileOrMd ? '100%' : 350 }}>
+      <ContentSidebar />
+      <Activity isMobileOrMd={isMobileOrMd} />
     </Flex>
   );
 };

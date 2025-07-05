@@ -1,13 +1,11 @@
 import { Card, Flex, Image, Typography } from "antd";
 import { plant1 } from "../../assets";
 
-const ContentSidebar = ({ isMobile }) => {
+const ContentSidebar = () => {
   return (
     <div>
       <Card className="card" style={{ position: 'relative', overflow: 'hidden', height: '350px' }}>
-        
         <Flex style={{ height: '100%' }} justify="space-between" align="center">
-          
           <Flex vertical gap={60} justify="center" align="center" style={{ width: '50%' }}>
             <div>
               <Typography.Title level={5}>
