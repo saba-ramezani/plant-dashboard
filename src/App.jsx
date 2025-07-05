@@ -1,38 +1,57 @@
-import { Button, Flex, Layout } from 'antd';
-import {MenuUnfoldOutlined, MenuFoldOutlined} from '@ant-design/icons'
-import { IoIosArrowDroprightCircle } from "react-icons/io";
-import 'antd/dist/reset.css';
+import { Button, Flex, Layout, Grid } from 'antd';
+import {
+  MenuUnfoldOutlined,
+  MenuFoldOutlined
+} from '@ant-design/icons';
 import { useState } from 'react';
-import './App.css'
+import './App.css';
 import { Sidebar, CustomHeader, MainContent, SideContent } from './components';
 
 const { Header, Sider, Content } = Layout;
+const { useBreakpoint } = Grid;
 
 const App = () => {
-  const [collapsed, setCollapsed] = useState(false)
+  const [collapsed, setCollapsed] = useState(false);
+  const screens = useBreakpoint(); // <-- responsive breakpoint state
+
+  const isMobile = !screens.md; // true if screen < 768px
+
   return (
-    <Layout>
+    <Layout style={{ minHeight: '100vh' }}>
+      {/* Sider becomes collapsible on small screens */}
       <Sider
-        theme='light'
+        theme="light"
         trigger={null}
         collapsible
         collapsed={collapsed}
-        className='sider'
+        collapsedWidth={isMobile ? 0 : 80} // Hide completely on mobile
+        breakpoint="md" // Collapse on medium screens and below
+        onBreakpoint={(broken) => setCollapsed(broken)} // collapse automatically
+        className="sider"
       >
         <Sidebar />
-        <Button
-          type='text'
-          icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-          onClick={() => setCollapsed(!collapsed)}
-          className='collapse-menu-btn'
+        {!isMobile && (
+          <Button
+            type="text"
+            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+            onClick={() => setCollapsed(!collapsed)}
+            className="collapse-menu-btn"
           />
+        )}
       </Sider>
+
       <Layout>
-        <Header className='header'>
+        <Header className="header">
           <CustomHeader />
         </Header>
-        <Content className='content'>
-          <Flex gap={"large"}>
+
+        <Content className="content">
+          <Flex
+            vertical={isMobile} // Stack items vertically on mobile
+            gap="large"
+            justify="space-between"
+            style={{ padding: isMobile ? 12 : 24 }}
+          >
             <MainContent />
             <SideContent />
           </Flex>
