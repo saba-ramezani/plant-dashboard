@@ -8,7 +8,7 @@ const { useBreakpoint } = Grid;
 
 const MainContent = () => {
   const screens = useBreakpoint();
-  const isMobile = !screens.md;
+  const isMobile = !screens.sm;
   const isBetweenMdAndLg = screens.md & !screens.lg;
 
   return (

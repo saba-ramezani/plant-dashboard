@@ -3,7 +3,7 @@ import { Avatar, Button, Card, Divider, Flex, Tooltip, Typography, Row, Col, Gri
 const SellersList = ({ isMobile }) => {
   return (
     <Row gutter={[16, 16]}>
-      <Col xs={24} md={12}>
+      <Col xs={24} md={24} lg={24} xl={12}>
         <Flex vertical gap="small" className="top-seller">
           <Flex align="center" justify="space-between">
             <Typography.Title level={5} strong className="primary--color">
@@ -47,7 +47,6 @@ const SellersList = ({ isMobile }) => {
                     <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
                 </Tooltip>
               </Avatar.Group>
-              {!isMobile && <Divider type="vertical" className="divider" />}
               <Flex vertical align="flex-start">
                 <Typography.Text type="secondary" strong>
                   1,200 plants sold
@@ -61,7 +60,7 @@ const SellersList = ({ isMobile }) => {
         </Flex>
       </Col>
 
-      <Col xs={24} md={12}>
+      <Col xs={24} md={24} lg={24} xl={12}>
         <Flex vertical gap="small" className="featured-seller">
           <Flex align="center" justify="space-between">
             <Typography.Title level={5} strong className="primary--color">
@@ -105,7 +104,6 @@ const SellersList = ({ isMobile }) => {
                     <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
                 </Tooltip>
               </Avatar.Group>
-              {!isMobile && <Divider type="vertical" className="divider" />}
               <Flex vertical align="flex-start">
                 <Typography.Text type="secondary" strong>
                   1,530 plants sold
