@@ -128,4 +128,10 @@
 
 .card {
   background-image: linear-gradient(to bottom, #4c7f79, #87e8de);
+  display: flex;
+  flex-direction: row;
+}
+
+.card .ant-card-body {
+  width: 100% !important;
 }
