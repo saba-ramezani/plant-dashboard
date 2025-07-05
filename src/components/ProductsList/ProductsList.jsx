@@ -7,7 +7,7 @@ const ProductsList = () => {
     <>
       <Flex align='center' justify='space-between'>
         <Typography.Title level={3} strong className='primary--color'>
-          My Listing
+          My Listings
         </Typography.Title>
         <Button type='link' className='secondary--color'>View All</Button>
       </Flex>
