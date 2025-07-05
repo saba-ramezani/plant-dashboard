@@ -64,6 +64,12 @@
   cursor: pointer;
 }
 
+.plant-card {
+  flex: 1;
+  height: 250px;
+  text-align: center;
+}
+
 /* .ant-btn {
   background-color: #4f6f52 !important;
   border: #4f6f52 !important;
