@@ -13,8 +13,7 @@ const { useBreakpoint } = Grid;
 const App = () => {
   const [collapsed, setCollapsed] = useState(false);
   const screens = useBreakpoint();
-
-  const isMobile = !screens.lg; 
+  const isMobileOrMd = !screens.lg; 
 
   return (
     <Layout style={{ minHeight: '100vh' }}>
@@ -23,13 +22,13 @@ const App = () => {
         trigger={null}
         collapsible
         collapsed={collapsed}
-        collapsedWidth={isMobile ? 0 : 80} // Hide completely on mobile
-        breakpoint="md" // Collapse on medium screens and below
-        onBreakpoint={(broken) => setCollapsed(broken)} // collapse automatically
+        collapsedWidth={isMobileOrMd ? 0 : 80}
+        breakpoint="md"
+        onBreakpoint={(broken) => setCollapsed(broken)}
         className="sider"
       >
         <Sidebar />
-        {!isMobile && (
+        {!isMobileOrMd && (
           <Button
             type="text"
             icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
@@ -43,13 +42,12 @@ const App = () => {
         <Header className="header">
           <CustomHeader />
         </Header>
-
         <Content className="content">
           <Flex
-            vertical={isMobile} // Stack items vertically on mobile
+            vertical={isMobileOrMd}
             gap="large"
             justify="space-between"
-            style={{ padding: isMobile ? 12 : 24 }}
+            style={{ padding: isMobileOrMd ? 12 : 24 }}
           >
             <MainContent />
             <SideContent />

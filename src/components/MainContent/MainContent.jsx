@@ -15,7 +15,7 @@ const MainContent = () => {
     <div style={{ flex: 1 }}>
       <Flex vertical gap="2.3rem">
         <Banner isMobile={isMobile} isBetweenMdAndLg={isBetweenMdAndLg} />
-        <ProductsList isMobile={isMobile} />
+        <ProductsList />
         <SellersList isMobile={isMobile} />
       </Flex>
     </div>
