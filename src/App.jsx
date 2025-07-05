@@ -12,13 +12,12 @@ const { useBreakpoint } = Grid;
 
 const App = () => {
   const [collapsed, setCollapsed] = useState(false);
-  const screens = useBreakpoint(); // <-- responsive breakpoint state
+  const screens = useBreakpoint();
 
-  const isMobile = !screens.md; // true if screen < 768px
+  const isMobile = !screens.lg; 
 
   return (
     <Layout style={{ minHeight: '100vh' }}>
-      {/* Sider becomes collapsible on small screens */}
       <Sider
         theme="light"
         trigger={null}

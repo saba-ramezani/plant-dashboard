@@ -6,7 +6,7 @@ const { useBreakpoint } = Grid;
 
 const SideContent = () => {
   const screens = useBreakpoint();
-  const isMobile = !screens.md;
+  const isMobile = !screens.lg;
 
   return (
     <Flex vertical gap="2.3rem" style={{ width: isMobile ? '100%' : 350 }}>

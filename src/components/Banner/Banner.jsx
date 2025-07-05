@@ -1,11 +1,11 @@
 import { Button, Card, Flex, Typography } from 'antd'
 
-const Banner = ({ isMobile }) => {
+const Banner = ({ isMobile, isBetweenMdAndLg }) => {
   return (
-    <Card style={{ height: isMobile ? 'auto' : 260, padding: 20 }}>
+    <Card style={{ height: isMobile ? 'auto' : '350px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 20 }}>
       <Flex vertical gap="30px">
         <Flex vertical align="flex-start">
-          <Typography.Title level={isMobile ? 3 : 2} strong>
+          <Typography.Title level={isMobile ? 3 : isBetweenMdAndLg ? 2 : 1} strong>
             Create and Sell Products
           </Typography.Title>
           <Typography.Text type="secondary" strong>

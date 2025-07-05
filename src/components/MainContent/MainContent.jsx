@@ -9,11 +9,12 @@ const { useBreakpoint } = Grid;
 const MainContent = () => {
   const screens = useBreakpoint();
   const isMobile = !screens.md;
+  const isBetweenMdAndLg = screens.md & !screens.lg;
 
   return (
     <div style={{ flex: 1 }}>
       <Flex vertical gap="2.3rem">
-        <Banner isMobile={isMobile} />
+        <Banner isMobile={isMobile} isBetweenMdAndLg={isBetweenMdAndLg} />
         <ProductsList isMobile={isMobile} />
         <SellersList isMobile={isMobile} />
       </Flex>
